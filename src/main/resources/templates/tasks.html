@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tareas | Task Manager</title><link rel="stylesheet" th:href="@{/css/styles.css}"><link rel="stylesheet" th:href="@{/css/greenery.css}">
+    <script th:src="@{/css/js/common.js}" defer></script><script th:src="@{/css/js/tasks.js}" defer></script>
+</head>
+<body><div th:replace="~{fragments/navbar}"></div>
+<main class="page-shell">
+    <header class="page-heading"><div><p class="eyebrow">DEL PLAN A LA ACCIÓN</p><h1>Tareas</h1><p class="muted">Crea tareas, asigna prioridades y sigue su avance.</p></div></header>
+    <section class="panel"><h2 id="taskFormTitle">Nueva tarea</h2>
+        <form id="taskForm" class="form-grid">
+            <input type="hidden" id="taskId">
+            <label>Título<input id="title" required maxlength="180" placeholder="Ej. Preparar la primera versión"></label>
+            <label>Proyecto<select id="projectId" required><option value="">Cargando proyectos…</option></select></label>
+            <label>Prioridad<select id="priority"><option value="LOW">Baja</option><option value="MEDIUM" selected>Media</option><option value="HIGH">Alta</option></select></label>
+            <label>Fecha límite<input id="dueDate" type="date"></label>
+            <label class="field-wide">Descripción<textarea id="description" rows="3" maxlength="1000" placeholder="Detalles de la tarea"></textarea></label>
+            <div class="form-actions"><button class="button button-primary" id="taskSubmit" type="submit">Crear tarea</button><button class="button button-secondary" id="cancelTaskEdit" type="button" hidden>Cancelar</button></div>
+        </form><p class="muted small">La tarea nueva quedará asignada a tu usuario.</p><p id="taskMessage" class="form-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel"><div class="section-heading"><h2>Todas las tareas</h2><button class="button button-secondary" id="refreshTasks" type="button">Actualizar</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Tarea</th><th>Proyecto</th><th>Estado</th><th>Prioridad</th><th>Vence</th><th>Asignada a</th><th>Acciones</th></tr></thead><tbody id="taskTable"><tr><td colspan="7" class="empty-state">Cargando tareas…</td></tr></tbody></table></div><p id="taskListMessage" class="form-message" role="status"></p>
+    </section>
+</main></body></html>

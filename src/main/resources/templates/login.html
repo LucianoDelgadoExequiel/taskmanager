@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión | Task Manager</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/greenery.css}">
+</head>
+
+<body class="auth-page">
+
+<main class="auth-card">
+    <a class="brand" href="/login">Task<span>Manager</span></a>
+    <p class="eyebrow">TU ESPACIO DE TRABAJO</p>
+    <h1>Qué bueno verte</h1>
+    <p class="muted">Inicia sesión para continuar con tus proyectos.</p>
+    <form id="loginForm" class="form-stack">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" autocomplete="username" required placeholder="Tu usuario">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="Tu contraseña">
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        <button class="button button-primary" type="submit">Iniciar sesión</button>
+    </form>
+    <p class="auth-switch">¿Todavía no tienes cuenta? <a href="/register">Regístrate</a></p>
+</main>
+<script th:src="@{/css/js/login.js}" defer></script>
+
+</body>
+</html>

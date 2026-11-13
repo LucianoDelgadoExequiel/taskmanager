@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proyectos | Task Manager</title><link rel="stylesheet" th:href="@{/css/styles.css}"><link rel="stylesheet" th:href="@{/css/greenery.css}">
+    <script th:src="@{/css/js/common.js}" defer></script><script th:src="@{/css/js/projects.js}" defer></script>
+</head>
+<body><div th:replace="~{fragments/navbar}"></div>
+<main class="page-shell">
+    <header class="page-heading"><div><p class="eyebrow">PLANIFICA Y CONSTRUYE</p><h1>Proyectos</h1><p class="muted">Organiza tu trabajo en un solo lugar.</p></div></header>
+    <section class="panel"><h2 id="projectFormTitle">Nuevo proyecto</h2>
+        <form id="projectForm" class="form-grid">
+            <input type="hidden" id="projectId">
+            <label>Nombre<input id="name" required maxlength="120" placeholder="Ej. Rediseño del sitio"></label>
+            <label>Descripción<input id="description" maxlength="500" placeholder="¿De qué trata el proyecto?"></label>
+            <div class="form-actions"><button class="button button-primary" type="submit" id="projectSubmit">Crear proyecto</button><button class="button button-secondary" type="button" id="cancelEdit" hidden>Cancelar</button></div>
+        </form><p id="projectMessage" class="form-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel"><div class="section-heading"><h2>Todos los proyectos</h2><button class="button button-secondary" id="refreshProjects" type="button">Actualizar</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Proyecto</th><th>Descripción</th><th>Acciones</th></tr></thead><tbody id="projectTable"><tr><td colspan="3" class="empty-state">Cargando proyectos…</td></tr></tbody></table></div>
+        <p id="listMessage" class="form-message" role="status"></p>
+    </section>
+</main></body></html>

@@ -1,0 +1,21 @@
+:root{--ink:#3B4953;--muted:#687d71;--line:#d7e2d1;--blue:#5A7863;--blue-dark:#46634f;--surface:#fff;--shadow:0 14px 38px rgba(59,73,83,.09)}
+body{color:#3B4953;background:#EBF4DD}
+.navbar{background:#f7faef;border-color:#dce7d5}
+.brand{color:#3B4953}.brand span{color:#5A7863}
+.nav-links a{color:#5A7863}.nav-links a:hover{color:#3B4953}
+.eyebrow{color:#5A7863}
+.panel,.card,.auth-card{border-color:#dfe8d9;background:#fbfcf8;box-shadow:0 12px 34px rgba(59,73,83,.08)}
+.card h2{color:#5A7863}
+.muted{color:#687d71}
+.form-grid input,.form-grid select,.form-grid textarea,.form-stack input,.status-select{border-color:#cbd9c7;background:#fff;color:#3B4953}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus,.form-stack input:focus{border-color:#90AB8B;box-shadow:0 0 0 3px rgba(144,171,139,.22)}
+.button-primary{background:#5A7863;color:#fff}.button-primary:hover{background:#46634f}
+.button-secondary{background:#f4f7ef;border-color:#cbd9c7;color:#3B4953}.button-secondary:hover{background:#e7efdf}
+.button-danger{border-color:#e6c8c2;background:#fff9f7;color:#985847}.button-danger:hover{background:#fdf0ec}
+th{color:#687d71}th,td{border-bottom-color:#e7ede2}
+.priority{background:#e9efe4;color:#3B4953}.priority-high{background:#f8e9df;color:#985847}.priority-medium{background:#f5f0dd;color:#786c3f}.priority-low{background:#e2eee2;color:#46634f}
+.status-select{background-color:#fff}
+.auth-page{background:radial-gradient(ellipse at 20% 10%,rgba(144,171,139,.32) 0,transparent 47%),linear-gradient(135deg,#EBF4DD,#f7faef)}
+.auth-card{border-radius:24px}.auth-card .brand{color:#3B4953}
+.dashboard-list-item{border-bottom-color:#e7ede2}.list-meta{color:#687d71}
+.empty-state{color:#687d71}

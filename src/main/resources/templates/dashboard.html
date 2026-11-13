@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/css/greenery.css}">
+    <script th:src="@{/css/js/common.js}" defer></script>
+    <script th:src="@{/css/js/dashboard.js}" defer></script>
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar}"></div>
+
+<main class="page-shell">
+    <header class="page-heading"><div><p class="eyebrow">VISTA GENERAL</p><h1>Tu espacio de trabajo</h1><p class="muted">Resumen, proyectos activos y tareas pendientes en un solo lugar.</p></div></header>
+    <section class="cards dashboard-cards">
+        <article class="card"><p class="muted">Proyectos activos</p><h2 id="projectCount">—</h2><p class="small muted">Proyectos registrados</p></article>
+        <article class="card"><p class="muted">Tareas pendientes</p><h2 id="pendingTaskCount">—</h2><p id="taskProgress" class="small muted">Cargando resumen…</p></article>
+        <article class="card"><p class="muted">Tareas completadas</p><h2 id="doneTaskCount">—</h2><p class="small muted">De todas tus tareas</p></article>
+    </section>
+    <p class="dashboard-message form-message" role="status" aria-live="polite"></p>
+
+    <section class="dashboard-lists">
+        <article class="panel"><div class="section-heading"><div><p class="eyebrow">EN MARCHA</p><h2>Proyectos activos</h2></div><a class="button button-secondary" href="/projects">Administrar proyectos</a></div>
+            <div id="activeProjects" class="dashboard-list"><p class="empty-state">Cargando proyectos…</p></div>
+        </article>
+        <article class="panel"><div class="section-heading"><div><p class="eyebrow">SIGUIENTE</p><h2>Tareas pendientes</h2></div><a class="button button-secondary" href="/tasks">Ver todas las tareas</a></div>
+            <div id="pendingTasks" class="dashboard-list"><p class="empty-state">Cargando tareas…</p></div>
+        </article>
+    </section>
+</main>
+
+</body>
+</html>
